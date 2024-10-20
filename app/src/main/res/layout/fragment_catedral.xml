@@ -1,14 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatedralFragment">
+    android:padding="16dp"
+    android:background="#E0F7FA">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tituloLugares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Lugares"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#006080"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
 
-</FrameLayout>
+    <!-- Widget CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardCatedral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tituloLugares"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="8dp"
+        card_view:cardBackgroundColor="#B3E5FC">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imgCatedral"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/catedral"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_image"
+                android:clipToOutline="true"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTituloCatedral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Catedral de Arequipa"
+                    android:textSize="22sp"
+                    android:textColor="#006080"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+
+                <TextView
+                    android:id="@+id/tvDescripcionCatedral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Construida con ignimbrita, una piedra volcánica característica de la región, la Catedral de Arequipa es un ícono de la arquitectura neorrenacentista con toques góticos. Su fachada está compuesta por setenta columnas con capiteles corintios, tres portadas, y dos majestuosas torres que coronan los laterales del templo. Dentro de la catedral se encuentra uno de los órganos más grandes de Sudamérica, traído desde Bélgica en 1870."
+                    android:textSize="16sp"
+                    android:textColor="#212121"
+                    android:lineSpacingExtra="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/btnVolverCatedral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:layout_below="@id/cardCatedral"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#006080"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>
+
+
